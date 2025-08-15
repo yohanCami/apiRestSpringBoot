@@ -1,5 +1,6 @@
 package com.kmi.apirest.Person;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,11 @@ public class PersonController {
     @PostMapping
     public void createPersona(@RequestBody Person person) {
         personService.createPersona(person);
+    }
+
+    @GetMapping
+    public String welcome() {
+        return "Welcome to the Person API!";
     }
 
 }
